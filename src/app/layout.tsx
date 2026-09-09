@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Lepton News | ताज़ा खबरें, ब्रेकिंग न्यूज़",
   description: "Lepton News — भारत और दुनिया की ताज़ा खबरें, ब्रेकिंग न्यूज़, विश्लेषण। राजनीति, खेल, तकनीक, वित्त, मनोरंजन सब एक जगह।",
+  other: {
+    "google-adsense-account": "ca-pub-7241227459691122"
+  }
 };
 
 export default function RootLayout({
@@ -22,7 +25,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-7241227459691122" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7241227459691122"
