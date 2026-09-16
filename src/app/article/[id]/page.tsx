@@ -62,11 +62,20 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
             />
           </div>
 
-          <div className="prose prose-lg dark:prose-invert max-w-none prose-p:leading-relaxed prose-a:text-primary">
-            {article.content.split('\n\n').map((paragraph, idx) => (
-              <p key={idx} className="mb-6">{paragraph}</p>
+          <div className="prose prose-xl dark:prose-invert max-w-none prose-p:leading-relaxed prose-a:text-primary prose-p:text-lg prose-p:text-gray-700 dark:prose-p:text-gray-300 min-h-[400px]">
+            {article.content.split('\n').filter(p => p.trim()).map((paragraph, idx) => (
+              <p key={idx} className="mb-6 text-lg leading-8">{paragraph}</p>
             ))}
           </div>
+
+          {/* Read More / Source Link */}
+          {article.originalUrl && (
+            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800">
+              <a href={article.originalUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold text-lg">
+                📰 मूल स्रोत पर पूरी खबर पढ़ें →
+              </a>
+            </div>
+          )}
         </article>
 
         {/* Sidebar - Related Articles */}

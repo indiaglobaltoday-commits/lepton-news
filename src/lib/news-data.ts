@@ -102,5 +102,10 @@ export function getTrendingArticles(): Article[] {
 }
 
 export function getBreakingNews(): Article[] {
-  return getArticlesWithCache().filter(article => article.breaking);
+  const breaking = getArticlesWithCache().filter(article => article.breaking);
+  // If no articles are explicitly marked as breaking, use the latest 5
+  if (breaking.length === 0) {
+    return getArticlesWithCache().slice(0, 5);
+  }
+  return breaking.slice(0, 5);
 }
